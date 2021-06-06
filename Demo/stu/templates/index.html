@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<!-- 
+    markwy
+    2021.6.5 
+-->
+
+<html>
+    <head>
+        <title>学员管理系统 - from the5fire - by markwy</title>
+    </head>
+    <body>
+        <ul>
+            {% for student in students %}
+                <li>{{ student.name }} | {{ student.get_gender_display }} | {{ student.phone }} | {{ student.get_status_display }} </li>
+            {% endfor %}
+        </ul>
+        <hr/>
+        <form action="/" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
